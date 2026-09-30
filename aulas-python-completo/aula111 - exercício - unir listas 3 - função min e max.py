@@ -1,0 +1,25 @@
+# Exercício - Unir listas - Solução 3 - função min e max
+'''
+Crie uma função zipper (como o zipper de roupas)
+O trabalho dessa função será unir duas
+listas na ordem.
+Use todos os valores da menor lista.
+Ex.:
+['Salvador', 'Ubatuba', 'Belo Horizonte']
+['BA', 'SP', 'MG', 'RJ']
+Resultado
+[('Salvador', 'BA'), ('Ubatuba', 'SP'), ('Belo Horizonte', 'MG')]
+'''
+
+cidades = ['Salvador', 'Ubatuba', 'Belo Horizonte']
+estados = ['BA', 'SP', 'MG', 'RJ']
+
+def zipper(lista_a, lista_b):
+    tamanho = min(len(lista_a), len(lista_b))
+    lista_final = [(lista_a[i], lista_b[i]) for i in range(tamanho)]
+    return lista_final
+
+print(zipper(cidades, estados))
+print(zipper(estados, cidades))
+print(min(7, 4))
+print(max(7, 4))

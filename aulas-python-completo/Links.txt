@@ -1,0 +1,28 @@
+Link do Curso: https://www.udemy.com/course/python-3-do-zero-ao-avancado/
+
+Documentação Python: https://docs.python.org/pt-br/3/library/stdtypes.html
+
+Imprecisão de ponto flutuante - Double-precision floating-point format IEEE 754:
+https://en.wikipedia.org/wiki/Double-precision_floating-point_format
+https://docs.python.org/pt-br/3/tutorial/floatingpoint.html
+
+Escopo e Namespace no Python - Parte 1 (Teoria nos mínimos detalhes)
+https://www.youtube.com/watch?v=GkgbSIYSHUg
+
+LEGB, Global, Nonlocal, Enclosing e Call Stack de funções no Python - Parte 2
+https://www.youtube.com/watch?v=U8oF5WWpEGk
+
+Closures em Python: guia DEFINITIVO com o que ninguém te ensinou
+https://www.youtube.com/watch?v=8-H-G2t295A
+
+List Comprehension em Python: tudo o que você precisa saber
+https://youtu.be/1YbTDczvqco
+
+try e except - Exceções embutidas
+https://docs.python.org/pt-br/3/library/exceptions.html#built-in-exceptions
+
+Módulos padrão do python - Python Module Index
+https://docs.python.org/3/py-modindex.html
+
+O que e JSON? (Exemplos com Python e Javascript)
+https://www.youtube.com/watch?v=XmCrArtfjaQ

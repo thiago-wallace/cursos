@@ -1,0 +1,21 @@
+Exemplo de rede: 192.168.0.0/24
+
+enable - modo com privilégio
+
+sh ip int b - verificar interfaces (status e ip)
+sh ip route - verificar ip de rota estática
+sh dhcp lease - verificar ip e gateway obtido no dhcp
+conf t - modo de configuração
+
+# modo de configuração #
+
+hostname Route - nome do hostname
+ip route 0.0.0.0 0.0.0.0 192.168.0.1 - configurar rota estática
+int g0/0 - modo de configuração da interface g0/0
+int vlan 1 - modo de configuração da interface vlan 1
+
+# modo de configuração da interface #
+
+ip address 192.168.0.100 255.255.255.0 - configurar ip e máscara da interface com ip fixo
+ip address dhcp - configurar ip e máscara da interface em dhcp
+shutdown - desabilitar a interface
