@@ -1,0 +1,17 @@
+# configurar usuário/senha/privilégio e acesso telnet para o router R2
+
+R2#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+R2(config)#username thiago privilege 15 secret cisco
+R2(config)#line vty 0 4
+R2(config-line)#login local
+R2(config-line)#transport input all
+R2(config-line)#end
+R2#wr
+Building configuration...
+
+*Oct  1 05:21:56.533: %SYS-5-CONFIG_I: Configured from console by console[OK]
+R2#
+*Oct  1 05:21:59.783: %GRUB-5-CONFIG_WRITING: GRUB configuration is being updated on disk. Please wait...
+*Oct  1 05:22:00.494: %GRUB-5-CONFIG_WRITTEN: GRUB configuration was written to disk successfully.
+R2#

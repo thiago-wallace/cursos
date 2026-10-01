@@ -1,0 +1,34 @@
+Exemplo de rede: 192.168.0.0/24
+
+enable - modo com privilégio
+
+sh ip int b - verificar interfaces (status e ip)
+sh ip route - verificar ip de rota estática
+sh dhcp lease - verificar ip e gateway obtido no dhcp
+sh arp - exibir tabela arp de IPs e MACs
+debug telnet - mostrar na log as tentativas de acesso ao equipamento efetuadas via telnet
+conf t - modo de configuração
+
+# modo de configuração #
+
+hostname Route - nome do hostname
+ip route 0.0.0.0 0.0.0.0 192.168.0.1 - configurar rota estática
+int g0/0 - modo de configuração da interface g0/0
+username thiago password cisco - configurar usuário e senha
+username thiago secret cisco - configurar usuário e senha com criptografia mais segura
+username thiago privilege 15 secret cisco - configurar usuário e senha com criptografia mais segura e privilégio 15
+int vlan 1 - modo de configuração da interface vlan 1
+line vty 0 4 - modo de configuração do line vty 0 4 (line de telnet)
+interface loopback 0 - modo de configuração da interface de loopback 0
+
+# modo de configuração da interface #
+
+ip address 192.168.0.100 255.255.255.0 - configurar ip e máscara da interface com ip fixo
+ip address dhcp - configurar ip e máscara da interface em dhcp
+shutdown - desabilitar a interface
+
+# modo de configuração da line vty #
+login local - indicar que o login nessa line será local
+transport input all - configurar para todos os protocolos
+transport input telnet - configurar para protocolo telnet
+

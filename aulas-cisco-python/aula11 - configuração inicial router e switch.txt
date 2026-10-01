@@ -1,0 +1,55 @@
+# Exemplo de rede: 192.168.181.0/24 - gateway 192.168.181.2
+# configurar router R3 para comunicar com a internet
+
+Router#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#int g0/0
+Router(config-if)#ip address 192.168.181.103 255.255.255.0
+Router(config-if)#no shutdown
+Router(config-if)#exit
+Router(config)#
+*Oct  1 04:32:07.219: %LINK-3-UPDOWN: Interface GigabitEthernet0/0, changed state to up
+*Oct  1 04:32:08.219: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/0, changed state to up
+Router(config)#
+Router(config)#hostname R3
+R3(config)#ip route 0.0.0.0 0.0.0.0 192.168.181.2
+R3(config)#end
+R3#ping 8.8.8.8
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 8.8.8.8, timeout is 2 seconds:
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 9/12/25 ms
+R3#
+
+
+# configurar switch SW4 para comunicar com a internet
+
+Switch>enable
+Switch#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#hostname SW4
+SW4(config)#interface vlan 1
+SW4(config-if)#
+*Oct  1 04:34:47.044: %LINEPROTO-5-UPDOWN: Line protocol on Interface Vlan1, changed state to down
+SW4(config-if)#ip address 192.168.181.114 255.255.255.0
+SW4(config-if)#no shutdown
+SW4(config-if)#exit
+SW4(config)#
+*Oct  1 04:35:59.384: %LINK-3-UPDOWN: Interface Vlan1, changed state to up
+*Oct  1 04:36:00.384: %LINEPROTO-5-UPDOWN: Line protocol on Interface Vlan1, changed state to up
+SW4(config)#ip route 0.0.0.0 0.0.0.0 192.168.181.2
+SW4(config)#end
+SW4#
+*Oct  1 04:36:21.635: %SYS-5-CONFIG_I: Configured from console by console
+SW4#wr
+Building configuration...
+Compressed configuration from 3603 bytes to 1633 bytes[OK]
+*Oct  1 04:36:33.960: %GRUB-5-CONFIG_WRITING: GRUB configuration is being updated on disk. Please wait...
+*Oct  1 04:36:34.804: %GRUB-5-CONFIG_WRITTEN: GRUB configuration was written to disk successfully.
+SW4#ping 8.8.8.8
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 8.8.8.8, timeout is 2 seconds:
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 8/9/11 ms
+SW4#
+
