@@ -7,6 +7,10 @@ sh ip route - verificar ip de rota estática
 sh dhcp lease - verificar ip e gateway obtido no dhcp
 sh arp - exibir tabela arp de IPs e MACs
 debug telnet - mostrar na log as tentativas de acesso ao equipamento efetuadas via telnet
+sh vlan - sh vlan brief - mostrar vlans
+sh ip protocols - mostrar protocolos de roteamento
+sh ip ospf interface - mostrar ospf nas interfaces
+sh ip ospf neighbor - mostrar os ospf vizinhos 
 conf t - modo de configuração
 
 # modo de configuração #
@@ -20,6 +24,9 @@ username thiago privilege 15 secret cisco - configurar usuário e senha com crip
 int vlan 1 - modo de configuração da interface vlan 1
 line vty 0 4 - modo de configuração do line vty 0 4 (line de telnet)
 interface loopback 0 - modo de configuração da interface de loopback 0
+vlan 2 - modo de configuração da vlan 2
+no vlan 2-50 - apaga todas as vlans no range entre 2 e 50
+router ospf 1 - modo de configuração do roteamento ospf 1
 
 # modo de configuração da interface #
 
@@ -28,7 +35,13 @@ ip address dhcp - configurar ip e máscara da interface em dhcp
 shutdown - desabilitar a interface
 
 # modo de configuração da line vty #
+
 login local - indicar que o login nessa line será local
 transport input all - configurar para todos os protocolos
 transport input telnet - configurar para protocolo telnet
 
+# modo de configuração da vlan #
+name Vendas - renomeia a vlan como "Vendas"
+
+# modo de configuração do roteamento #
+network 10.100.102.0 0.0.0.3 area 0 - configura o ip de rede e a máscara invertida para o roteamento
