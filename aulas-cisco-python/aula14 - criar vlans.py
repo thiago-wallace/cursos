@@ -6,8 +6,6 @@ A comunidade desenvolveu o módulo 'telnetlib3', sucessor mais próximo do módu
 O 'telnetlib3' será instalado via pip e utilizado como substituto.
 https://docs.python.org/3.12/library/telnetlib.html
 '''
-import getpass
-import telnetlib
 
 import getpass
 import telnetlib

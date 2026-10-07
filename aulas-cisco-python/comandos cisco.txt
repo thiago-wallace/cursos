@@ -11,6 +11,7 @@ sh vlan - sh vlan brief - mostrar vlans
 sh ip protocols - mostrar protocolos de roteamento
 sh ip ospf interface - mostrar ospf nas interfaces
 sh ip ospf neighbor - mostrar os ospf vizinhos 
+terminal length 0 - deixar a quantidade de linhas do terminal como infinito
 conf t - modo de configuração
 
 # modo de configuração #

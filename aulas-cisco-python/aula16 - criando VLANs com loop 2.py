@@ -10,8 +10,6 @@ https://docs.python.org/3.12/library/telnetlib.html
 import getpass
 import telnetlib
 
-import getpass
-import telnetlib
 
 HOST = "192.168.181.112"
 user = input("Digite o login: ")
