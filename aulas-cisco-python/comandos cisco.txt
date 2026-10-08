@@ -12,6 +12,9 @@ sh ip protocols - mostrar protocolos de roteamento
 sh ip ospf interface - mostrar ospf nas interfaces
 sh ip ospf neighbor - mostrar os ospf vizinhos 
 terminal length 0 - deixar a quantidade de linhas do terminal como infinito
+sh run | section line vty - filtrar no sh run a seção do line vty
+sh run | include user - filtrar no sh run as linhas de user
+show crypto key mypubkey rsa - consultar chave SSH
 conf t - modo de configuração
 
 # modo de configuração #
@@ -22,6 +25,8 @@ int g0/0 - modo de configuração da interface g0/0
 username thiago password cisco - configurar usuário e senha
 username thiago secret cisco - configurar usuário e senha com criptografia mais segura
 username thiago privilege 15 secret cisco - configurar usuário e senha com criptografia mais segura e privilégio 15
+ip domain-name cisco.com - configurar o domínio "cisco.com" no switch (Pré requisito para configurar SSH)
+crypto key generate rsa - gerar chave SSH
 int vlan 1 - modo de configuração da interface vlan 1
 line vty 0 4 - modo de configuração do line vty 0 4 (line de telnet)
 interface loopback 0 - modo de configuração da interface de loopback 0
