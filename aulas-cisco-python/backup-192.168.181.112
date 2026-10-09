@@ -11,9 +11,10 @@ SW2#terminal length 0
 SW2#show run
 Building configuration...
 
-Current configuration : 3188 bytes
+  
+Current configuration : 3203 bytes
 !
-! Last configuration change at 04:12:24 UTC Wed Oct 7 2026 by thiago
+! Last configuration change at 02:35:24 UTC Fri Oct 9 2026
 !
 version 15.2
 service timestamps debug datetime msec
@@ -38,6 +39,7 @@ no aaa new-model
 !
 !
 !
+ip domain-name cisco.com
 ip cef
 no ipv6 cef
 !

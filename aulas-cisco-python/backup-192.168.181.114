@@ -1,4 +1,4 @@
-
+C
 **************************************************************************
 * IOSv is strictly limited to use for evaluation, demonstration and IOS  *
 * education. IOSv is provided as-is and is not supported by Cisco's      *
@@ -11,9 +11,10 @@ SW4#terminal length 0
 SW4#show run
 Building configuration...
 
-Current configuration : 3178 bytes
+  
+Current configuration : 3206 bytes
 !
-! Last configuration change at 02:52:46 UTC Wed Oct 7 2026
+! Last configuration change at 02:35:16 UTC Fri Oct 9 2026
 !
 version 15.2
 service timestamps debug datetime msec
@@ -38,6 +39,7 @@ no aaa new-model
 !
 !
 !
+ip domain-name cisco.com
 ip cef
 no ipv6 cef
 !
@@ -109,7 +111,7 @@ ip route 0.0.0.0 0.0.0.0 192.168.181.2
 !
 control-plane
 !
-banner exec ^C
+banner exec ^CC
 **************************************************************************
 * IOSv is strictly limited to use for evaluation, demonstration and IOS  *
 * education. IOSv is provided as-is and is not supported by Cisco's      *
@@ -118,7 +120,7 @@ banner exec ^C
 * purposes is expressly prohibited except as otherwise authorized by     *
 * Cisco in writing.                                                      *
 **************************************************************************^C
-banner incoming ^C
+banner incoming ^CC
 **************************************************************************
 * IOSv is strictly limited to use for evaluation, demonstration and IOS  *
 * education. IOSv is provided as-is and is not supported by Cisco's      *
@@ -127,7 +129,7 @@ banner incoming ^C
 * purposes is expressly prohibited except as otherwise authorized by     *
 * Cisco in writing.                                                      *
 **************************************************************************^C
-banner login ^C
+banner login ^CC
 **************************************************************************
 * IOSv is strictly limited to use for evaluation, demonstration and IOS  *
 * education. IOSv is provided as-is and is not supported by Cisco's      *

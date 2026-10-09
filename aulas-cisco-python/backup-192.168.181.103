@@ -11,13 +11,14 @@ R3#terminal length 0
 R3#show run
 Building configuration...
 
-Current configuration : 3330 bytes
+  
+Current configuration : 3606 bytes
 !
-! Last configuration change at 03:53:48 UTC Wed Oct 7 2026 by thiago
+! Last configuration change at 01:12:05 BRT Fri Oct 9 2026 by thiago
 !
 version 15.6
 service timestamps debug datetime msec
-service timestamps log datetime msec
+service timestamps log datetime localtime
 no service password-encryption
 !
 hostname R3
@@ -32,6 +33,7 @@ ethernet lmi ce
 !
 !
 !
+clock timezone BRT -3 0
 mmi polling-interval 60
 no mmi auto-configure
 no mmi pvc
@@ -47,6 +49,7 @@ mmi snmp-timeout 180
 !
 !
 !
+ip domain name cisco.com
 ip cef
 no ipv6 cef
 !
@@ -56,6 +59,8 @@ multilink bundle-name authenticated
 !
 !
 username thiago privilege 15 secret 5 $1$MRkw$CBAhCVDX1Leus9pK.b25F1
+username marcos privilege 15 secret 5 $1$/le2$MMdW0a2YPJTXFEFWM.8Wr0
+username paulo privilege 15 secret 5 $1$X6KI$IWaSQjTS20NbNPd0GFtQr0
 !
 redundancy
 !
@@ -83,6 +88,9 @@ interface Loopback2
  no ip address
 !
 interface Loopback3
+ no ip address
+!
+interface Loopback10
  no ip address
 !
 interface GigabitEthernet0/0
@@ -162,6 +170,8 @@ line vty 0 4
  transport input all
 !
 no scheduler allocate
+ntp server 200.160.0.8
+ntp server 200.189.40.8
 !
 end
 

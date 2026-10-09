@@ -1,0 +1,11 @@
+clock timezone BRT -3
+ntp server 200.160.0.8
+ntp server 200.189.40.8
+service timestamps log datetime localtime
+
+logging console 7
+
+username marcos privilege 15 secret cisco
+username paulo privilege 15 secret cisco
+
+interface loopback 10
