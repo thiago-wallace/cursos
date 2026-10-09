@@ -32,6 +32,7 @@ crypto key generate rsa - gerar chave SSH
 clock timezone BRT -3 - configurar fuso horário de Brasília
 ntp server 200.160.0.8 - configurar um dos servidores NTP para sincronizar o horário
 service timestamps log datetime localtime - configurar as logs do equipamento com o fuso horário local
+ip scp server enable - habilitar SCP, necessário para o Napalm (Python) enviar config
 int vlan 1 - modo de configuração da interface vlan 1
 line vty 0 4 - modo de configuração do line vty 0 4 (line de telnet)
 interface loopback 0 - modo de configuração da interface de loopback 0

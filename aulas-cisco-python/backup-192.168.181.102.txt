@@ -1,0 +1,171 @@
+Building configuration...
+
+  
+Current configuration : 3829 bytes
+!
+! Last configuration change at 14:35:20 BRT Fri Oct 9 2026 by thiago
+! NVRAM config last updated at 14:35:16 BRT Fri Oct 9 2026 by thiago
+!
+version 15.6
+service timestamps debug datetime msec
+service timestamps log datetime localtime
+no service password-encryption
+!
+hostname R2
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+ethernet lmi ce
+!
+!
+!
+clock timezone BRT -3 0
+mmi polling-interval 60
+no mmi auto-configure
+no mmi pvc
+mmi snmp-timeout 180
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+ip domain name cisco.com
+ip cef
+no ipv6 cef
+!
+multilink bundle-name authenticated
+!
+!
+!
+!
+username thiago privilege 15 secret 5 $1$AiY8$TJbN0IFWXYZ45flqPD4TH0
+username marcos privilege 15 secret 5 $1$8wUw$kPVEBqUnPR.rl8B0HQBfv.
+username paulo privilege 15 secret 5 $1$Oh/V$9k9ueajOamQ/ZNS9uui6P1
+!
+redundancy
+!
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface Loopback0
+ ip address 2.2.2.2 255.255.255.0
+!
+interface Loopback1
+ no ip address
+!
+interface Loopback2
+ no ip address
+!
+interface Loopback3
+ no ip address
+!
+interface Loopback10
+ no ip address
+!
+interface GigabitEthernet0/0
+ ip address 192.168.181.102 255.255.255.0
+ duplex auto
+ speed auto
+ media-type rj45
+!
+interface GigabitEthernet0/1
+ ip address 10.100.102.2 255.255.255.0
+ duplex auto
+ speed auto
+ media-type rj45
+!
+interface GigabitEthernet0/2
+ ip address 10.100.203.1 255.255.255.252
+ duplex auto
+ speed auto
+ media-type rj45
+!
+interface GigabitEthernet0/3
+ no ip address
+ shutdown
+ duplex auto
+ speed auto
+ media-type rj45
+!
+router ospf 1
+ network 10.100.102.0 0.0.0.3 area 0
+ network 10.100.203.0 0.0.0.3 area 0
+!
+router bgp 300
+ bgp log-neighbor-changes
+ network 2.2.2.0 mask 255.255.255.0
+ neighbor 10.100.102.1 remote-as 200
+!
+ip forward-protocol nd
+!
+!
+no ip http server
+no ip http secure-server
+ip route 0.0.0.0 0.0.0.0 192.168.181.2
+ip scp server enable
+!
+!
+!
+!
+control-plane
+!
+banner exec ^C
+**************************************************************************
+* IOSv is strictly limited to use for evaluation, demonstration and IOS  *
+* education. IOSv is provided as-is and is not supported by Cisco's      *
+* Technical Advisory Center. Any use or disclosure, in whole or in part, *
+* of the IOSv Software or Documentation to any third party for any       *
+* purposes is expressly prohibited except as otherwise authorized by     *
+* Cisco in writing.                                                      *
+**************************************************************************^C
+banner incoming ^C
+**************************************************************************
+* IOSv is strictly limited to use for evaluation, demonstration and IOS  *
+* education. IOSv is provided as-is and is not supported by Cisco's      *
+* Technical Advisory Center. Any use or disclosure, in whole or in part, *
+* of the IOSv Software or Documentation to any third party for any       *
+* purposes is expressly prohibited except as otherwise authorized by     *
+* Cisco in writing.                                                      *
+**************************************************************************^C
+banner login ^C
+**************************************************************************
+* IOSv is strictly limited to use for evaluation, demonstration and IOS  *
+* education. IOSv is provided as-is and is not supported by Cisco's      *
+* Technical Advisory Center. Any use or disclosure, in whole or in part, *
+* of the IOSv Software or Documentation to any third party for any       *
+* purposes is expressly prohibited except as otherwise authorized by     *
+* Cisco in writing.                                                      *
+**************************************************************************^C
+!
+line con 0
+line aux 0
+line vty 0 4
+ login local
+ transport input all
+!
+no scheduler allocate
+ntp server 200.160.0.8
+ntp server 200.189.40.8
+!
+end

@@ -12,9 +12,10 @@ R2#show run
 Building configuration...
 
   
-Current configuration : 3569 bytes
+Current configuration : 3829 bytes
 !
-! Last configuration change at 01:11:27 BRT Fri Oct 9 2026 by thiago
+! Last configuration change at 14:35:20 BRT Fri Oct 9 2026 by thiago
+! NVRAM config last updated at 14:35:16 BRT Fri Oct 9 2026 by thiago
 !
 version 15.6
 service timestamps debug datetime msec
@@ -78,6 +79,9 @@ redundancy
 !
 !
 !
+interface Loopback0
+ ip address 2.2.2.2 255.255.255.0
+!
 interface Loopback1
  no ip address
 !
@@ -97,7 +101,7 @@ interface GigabitEthernet0/0
  media-type rj45
 !
 interface GigabitEthernet0/1
- ip address 10.100.102.2 255.255.255.252
+ ip address 10.100.102.2 255.255.255.0
  duplex auto
  speed auto
  media-type rj45
@@ -119,12 +123,18 @@ router ospf 1
  network 10.100.102.0 0.0.0.3 area 0
  network 10.100.203.0 0.0.0.3 area 0
 !
+router bgp 300
+ bgp log-neighbor-changes
+ network 2.2.2.0 mask 255.255.255.0
+ neighbor 10.100.102.1 remote-as 200
+!
 ip forward-protocol nd
 !
 !
 no ip http server
 no ip http secure-server
 ip route 0.0.0.0 0.0.0.0 192.168.181.2
+ip scp server enable
 !
 !
 !
