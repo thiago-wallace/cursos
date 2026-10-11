@@ -1,4 +1,4 @@
-# datetime - now e timezone
+# datetime - now, timezone e timestamp
 '''
 datetime(ano, mês, dia)
 datetime(ano, mês, dia, horas, minutos, segundos)
