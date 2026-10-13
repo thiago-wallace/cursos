@@ -1,0 +1,14 @@
+F2
+Renomeia a variável nos lugares em que ela é utilizada
+
+ctrl + ; (no Windows) ctrl + / (No Linux)
+Comenta ou descomenta as linhas selecionadas
+
+ctrl + d
+seleciona a próxima vez que a palavra selecionada aparece, duplicando o cursor
+
+Alt + Seta para Cima ou para Baixo
+Move a linha atual para cima ou para baixo
+
+ctrl + espaço
+Mostra as sugestões de preenchimento
