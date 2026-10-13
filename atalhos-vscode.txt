@@ -4,11 +4,14 @@ Renomeia a variável nos lugares em que ela é utilizada
 ctrl + ; (no Windows) ctrl + / (No Linux)
 Comenta ou descomenta as linhas selecionadas
 
+alt + Seta para Cima ou para Baixo
+Move a linha atual para cima ou para baixo
+
 ctrl + d
 seleciona a próxima vez que a palavra selecionada aparece, duplicando o cursor
 
-Alt + Seta para Cima ou para Baixo
-Move a linha atual para cima ou para baixo
+alt + clique do mouse
+duplica o cursor
 
 ctrl + espaço
 Mostra as sugestões de preenchimento
