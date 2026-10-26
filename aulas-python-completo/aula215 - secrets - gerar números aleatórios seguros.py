@@ -13,7 +13,7 @@ cidades = ['São Paulo', 'Rio de Janeiro',
            'Belo Horizonte', 'Porto Alegre', 'Fortaleza']
 print(secrets.choice(cidades))
 
-# USANDO SYSTEMRANDOM, COM OS MESMO MÉTODOS DO MÓDULO RANDOM
+# USANDO SYSTEMRANDOM, COM OS MESMOS MÉTODOS DO MÓDULO RANDOM
 
 r = secrets.SystemRandom()
 
