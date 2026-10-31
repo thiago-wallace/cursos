@@ -12,15 +12,16 @@ from email.mime.text import MIMEText
 
 load_dotenv()
 
-# Dados do remetente e destinatário
-remetente = os.getenv('FROM_EMAIL', '')
-destinatario = os.getenv('TO_EMAIL', '')
+# Dados do remetente, destinatário e assunto
+remetente = os.getenv('EMAIL_REMETENTE', '')
+destinatario = os.getenv('EMAIL_DESTINATARIO', '')
+assunto = os.getenv('ASSUNTO', '')
 
 # Configurações SMTP
 smtp_server = "smtp.gmail.com"
 smtp_port = 587
-smtp_username = os.getenv('FROM_EMAIL', '')
-smtp_password = os.getenv('EMAIL_PASSWORD', '')
+smtp_username = remetente
+smtp_password = os.getenv('EMAIL_SENHA', '')
 
 # Caminho e-mail no HTML
 CAMINHO_EMAIL = Path(__file__).parent / 'aula219.html'
@@ -30,8 +31,8 @@ with open(CAMINHO_EMAIL, 'r') as arquivo:
     mensagem = arquivo.read()
 email_modelo = Template(mensagem)
 nomes = {
-    'nome_from': os.getenv('NAME_FROM'),
-    'nome_to': os.getenv('NAME_TO'),
+    'nome_from': os.getenv('NOME_REMETENTE'),
+    'nome_to': os.getenv('NOME_DESTINATARIO'),
 }
 email_preenchido = email_modelo.substitute(nomes)
 
@@ -40,7 +41,7 @@ email_preenchido = email_modelo.substitute(nomes)
 mime_multipart = MIMEMultipart()
 mime_multipart['from'] = remetente
 mime_multipart['to'] = destinatario
-mime_multipart['subject'] = 'E-mail de Teste em Python'  # Assunto do email
+mime_multipart['subject'] = assunto
 # Configurar corpo do email (Nesse caso em "html", mas se fosse texto simples, seria "plain")
 corpo_email = MIMEText(email_preenchido, 'html', 'utf-8')
 # Unir configurações e corpo do email
