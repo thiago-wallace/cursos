@@ -30,4 +30,4 @@ with open('aula217b - email.txt', 'r') as arquivo:
     texto = arquivo.read()
 
 email_modelo = string.Template(texto)
-print(email_modelo.safe_substitute(dados))
+print(email_modelo.substitute(dados))
