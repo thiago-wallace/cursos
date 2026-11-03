@@ -15,3 +15,12 @@ duplica o cursor
 
 ctrl + espaço
 Mostra as sugestões de preenchimento
+
+---------------------------------------------------------------------------------------------------
+HTML
+
+!
+Gerar código base
+
+link:css
+Gerar link com o arquivo "style.css"
