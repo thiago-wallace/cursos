@@ -1,7 +1,17 @@
+beautifulsoup4==4.15.0
+bs4==0.0.2
+certifi==2026.10.23
+charset-normalizer==3.5.2
+idna==3.20
 PyMySQL==1.0.2
 python-dateutil==2.9.0.post0
 python-dotenv==1.2.4
 pytz==2026.5
+requests==2.34.2
 six==1.17.0
+soupsieve==4.0
 types-python-dateutil==2.9.0.20260807
 types-pytz==2026.5.0.20261006
+types-requests==2.33.0.20261030
+typing_extensions==4.16.0
+urllib3==2.8.0
