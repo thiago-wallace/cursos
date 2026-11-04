@@ -1,4 +1,5 @@
-# raspagem de sites da internet
+# raspagem de sites da internet 1
+# efetuando primeira raspagem
 '''
 + Web Scraping com Python usando requests e bs4 BeautifulSoup
 - Web Scraping é o ato de "raspar a web" buscando informações de forma
