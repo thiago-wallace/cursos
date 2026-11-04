@@ -1,4 +1,4 @@
-# raspagem de sites da internet 2
+# raspagem de sites da internet 3
 # raspando partes específicas do site
 # corrigindo caractere especial no início do requests para utf-8
 '''
