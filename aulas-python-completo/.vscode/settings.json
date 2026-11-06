@@ -1,11 +1,19 @@
 {
+    // - Configuração para exibir as pastas de forma compacta
     "explorer.compactFolders": false,
+    // - Formatar automaticamente com a autopep8 ao salvar o arquivo
     "editor.formatOnSave": true,
+    // - Analisar possíveis erros de tipagem do código python
     "python.analysis.typeCheckingMode": "basic",
+    // - Procurar e abrir repositório do GitHub nas pastas acima 
     "git.openRepositoryInParentFolders": "always",
+    // - Configurar para o VS Code abrir um determinado terminal (shell) no Linux (Útil para VSCodium) 
     "terminal.integrated.defaultProfile.linux": null,
+    // - Demarcar linhas na vertical para mostrar o limite recomendado do tamanho da linha, conforme a pep8
     // "editor.rulers": [
     //     80,
     //     120
     // ],
+    // - Correção de bug da extensão Python, para executar arquivos com espaço
+    "python.useEnvironmentsExtension": false
 }
