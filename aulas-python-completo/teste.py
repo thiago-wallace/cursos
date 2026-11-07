@@ -1,1 +1,3 @@
-print('ttt')
+import subprocess
+
+subprocess.run(['ping', 'localhost'])
