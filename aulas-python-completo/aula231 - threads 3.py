@@ -6,13 +6,17 @@ from threading import Thread
 from time import sleep
 
 
-def caminhos(nome, voltas):
+def caminhos(nome, voltas, tempo):
     for i in range(voltas):
         print(f'{nome} - Volta {i}')
-        sleep(1)
+        sleep(tempo)
 
 
-t = Thread(target=caminhos, args=('Caminho A', 10))
+t = Thread(target=caminhos, args=('Caminho A', 6, 10))
 t.start()
 
-caminhos('Caminho Principal', 10)
+# enquanto a thread t estiver rodando, a thread principal rodará este while, sem "congelar" o app
+while t.is_alive():
+    print('Thread em andamento...')
+    sleep(3)
+print('Thread finalizada!')
