@@ -1,4 +1,4 @@
-# manipular PDF com PyPDF2
+# ler PDF com PyPDF2
 '''
 PyPDF2 para manipular arquivos PDF (Instalação)
 PyPDF2 é uma biblioteca de manipulação de arquivos PDF feita em Python puro,
@@ -26,4 +26,26 @@ PASTA_NOVOS_ARQUIVOS.mkdir(exist_ok=True)
 # Ler o arquivo PDF
 reader = PdfReader(BACEN_2023)
 
-print(reader)
+# Guardar as páginas do PDF em um iterável
+paginas = reader.pages
+
+# Verificar a quantidade de páginas
+print('Número de páginas:', len(paginas), end='\n\n')
+
+# Extrair o texto da primeira página
+print(paginas[0].extract_text(), end='\n\n')
+
+# Imagens da primeira página - Necessário instalar dependência image: pip install PyPDF2[image]
+print(paginas[0].images, end='\n\n')
+
+# Quantidade de imagens na página
+print('Número de imagens:', len(paginas[0].images), end='\n\n')
+
+# Guardar a primeira imagem da primeira página
+imagem = paginas[0].images[0]
+
+# Salvar a imagem em um arquivo .png
+# no open, ao salvar, deverá ser configurado como 'wb' ao invés de 'w', pois o open salvará os dados do arquivo em bytes
+imagem_caminho = PASTA_NOVOS_ARQUIVOS / imagem.name
+with open(imagem_caminho, 'wb') as arquivo:
+    arquivo.write(imagem.data)
