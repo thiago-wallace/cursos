@@ -1,35 +1,21 @@
-from threading import Thread
-from time import sleep
+x = '4.5'
+
+d = x.isdigit()
+n = x.isnumeric()
+dec = x.isdecimal()
+
+print(d)
+print(n)
+print(dec)
 
 
-def caminho_a():
-    for i in range(10):
-        print(f'Caminho A - {i}')
-        sleep(1)
+def is_float(numero: str) -> bool:
+    try:
+        float(numero)
+        return True
+    except:
+        return False
 
 
-def caminho_b(voltas):
-    for i in range(voltas):
-        print(f'Caminho B - {i}')
-        sleep(1)
-
-
-def caminhos(nome, voltas):
-    for i in range(voltas):
-        print(f'{nome} - {i}')
-        sleep(1)
-
-
-t1 = Thread(target=caminho_a)
-t2 = Thread(target=caminho_b, args=(10,))
-t3 = Thread(target=caminhos, args=('Caminho C', 10))
-t4 = Thread(target=caminhos, args=('Caminho D', 10))
-
-t1.start()
-t2.start()
-t3.start()
-t4.start()
-
-for i in range(10):
-    print(f'Caminho Principal - {i}')
-    sleep(1)
+f = is_float(x)
+print(f)
